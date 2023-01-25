@@ -658,9 +658,11 @@
         guardar();
     }
 
+    let width_xx  = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    let height_yy = window.innerHeight|| document.documentElement.clientHeight|| document.body.clientHeight;
+
     $(function() {
-        $("#cardUno").height($(window).height()/2);
-        // .width($(window).width()/2)
+        $("#cardUno").height(height_yy/2).width(width_xx/2);
     });
 
   </script>
