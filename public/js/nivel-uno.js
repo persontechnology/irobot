@@ -8,6 +8,8 @@ let colorLuz="#0f0";
 let tiempo=5000;
 let tiempoEjecucion;
 
+let width_x  = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+let height_y = window.innerHeight|| document.documentElement.clientHeight|| document.body.clientHeight;
 
 
 function preload() {
@@ -18,7 +20,7 @@ function preload() {
 }
 
 function setup() {
-	createCanvas(750, $(window).height()/2);
+	createCanvas(width_x/2, height_y/2);
 	rectMode(CENTER);
   strokeWeight(2);
   stroke(51);
