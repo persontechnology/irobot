@@ -18,7 +18,7 @@ function preload() {
 }
 
 function setup() {
-	createCanvas(750, 450);
+	createCanvas(750, $(window).height()/2);
 	rectMode(CENTER);
   strokeWeight(2);
   stroke(51);

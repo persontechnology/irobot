@@ -44,7 +44,7 @@
 
             {{-- primer contenedor --}}
             <div class="col-sm-6" id="tourUno">
-                <div class="card border border-2 border-dark" style="height: 450px;">
+                <div class="card border border-2 border-dark"  id="cardUno">
                     <div class="card-header d-sm-flex align-items-sm-center py-sm-0">
                         <a href="{{ url('/') }}" class="btn btn-link">
                             <i class="fa-solid fa-arrow-left"></i>
@@ -657,6 +657,12 @@
         $("#"+btnid).remove();
         guardar();
     }
+
+    $(function() {
+        $("#cardUno").height($(window).height()/2);
+        // .width($(window).width()/2)
+    });
+
   </script>
 </body>
 </html>
