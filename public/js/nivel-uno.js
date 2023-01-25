@@ -26,6 +26,9 @@ function setup() {
   noLoop();
   x=width/2;
   y=height/2;
+
+  $("#cardUno").height(displayHeight/2).width(displayWidth/2);
+
 }
 
 function cancelar(){
