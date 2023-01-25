@@ -8,9 +8,6 @@ let colorLuz="#0f0";
 let tiempo=5000;
 let tiempoEjecucion;
 
-let width_x  = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-let height_y = window.innerHeight|| document.documentElement.clientHeight|| document.body.clientHeight;
-
 
 function preload() {
   // cargando todos los sonidos
@@ -20,7 +17,8 @@ function preload() {
 }
 
 function setup() {
-	createCanvas(width_x/2, height_y/2);
+  
+  createCanvas(displayWidth/2, displayHeight/2);
 	rectMode(CENTER);
   strokeWeight(2);
   stroke(51);
