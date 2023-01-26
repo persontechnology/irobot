@@ -58,34 +58,6 @@ const App = function () {
     // Resize main sidebar
     const sidebarMainResize = function() {
 
-        document.querySelectorAll('.btn-light-theme').forEach(function(btn) {
-            btn.addEventListener('click', function() {
-                    // localStorage.removeItem('theme');
-                // }
-                // else {
-                    localStorage.removeItem('theme');
-            })
-        })
-
-        document.querySelectorAll('.btn-dark-theme').forEach(function(btn) {
-            btn.addEventListener('click', function() {
-                    // localStorage.removeItem('theme');
-                // }
-                // else {
-                    localStorage.setItem('theme', 'dark');
-            })
-        })
-
-        document.querySelectorAll('.btn-auto-theme').forEach(function(btn) {
-            btn.addEventListener('click', function() {
-                    // localStorage.removeItem('theme');
-                // }
-                // else {
-                    window.matchMedia('(prefers-color-scheme: dark)').matches ? localStorage.setItem('theme', 'auto') : localStorage.removeItem('theme');
-                    // ((localStorage.getItem('theme') == 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches) || localStorage.getItem('theme') == 'dark') && document.documentElement.setAttribute('data-color-theme', 'dark');
-            })
-        })
-
         // Elements
         const sidebarMainElement = document.querySelector('.sidebar-main'),
               sidebarMainToggler = document.querySelectorAll('.sidebar-main-resize'),

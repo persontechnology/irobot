@@ -25,7 +25,7 @@ Route::get('/nuevo-proyecto', function () {
 // esta es la ruta para el juego pricipal, necesita un id
 Route::get('/principal/{id}',function($id){
     $data = array('pry' => Proyecto::findOrFail($id) );
-    return view('principal',$data);
+    return view('demo',$data);
 })->name('principal');
 
 

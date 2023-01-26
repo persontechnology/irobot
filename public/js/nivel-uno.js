@@ -9,6 +9,7 @@ let tiempo=5000;
 let tiempoEjecucion;
 
 
+
 function preload() {
   // cargando todos los sonidos
   for(let e of Array.from($("#contenedorPitar>div>input"))){
@@ -17,8 +18,7 @@ function preload() {
 }
 
 function setup() {
-  
-  createCanvas(displayWidth/2, displayHeight/2);
+	createCanvas(windowWidth/2, 1.2*windowHeight/2);
 	rectMode(CENTER);
   strokeWeight(2);
   stroke(51);
@@ -26,9 +26,9 @@ function setup() {
   noLoop();
   x=width/2;
   y=height/2;
-
-  $("#cardUno").height(displayHeight/2).width(displayWidth/2);
-
+  $("#nivel-uno-contenedor").height(windowHeight/2);
+  $("#nivel-dos-contenedor").height(windowHeight/2);
+  $("#nivel-tres-contenedor").height(windowHeight/2);
 }
 
 function cancelar(){
