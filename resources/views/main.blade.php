@@ -82,7 +82,7 @@
                         <a href="{{ url ('/') }}"><img src="{{ asset('ui/assets/img/nav/nav_home.png') }}" class="img-fluid" alt="Home">Inicio </a>
                     </li>
                     <li>
-                        <a href="{{ route('nuevo-proyecto') }}"><img src="{{ asset('ui/assets/img/nav/contact_nav.png') }}" class="img-fluid" alt="About">Nuevo proyecto</a>
+                        <a href="{{ route('confirmar-nuevo-proyecto') }}"><img src="{{ asset('ui/assets/img/nav/contact_nav.png') }}" class="img-fluid" alt="About">Nuevo proyecto</a>
                     </li>
                     <li>
                         <a href="{{ route('proyectos') }}"><img src="{{ asset('ui/assets/img/nav/news_nav.png') }}" alt="Contact">Listado de proyectos</a>

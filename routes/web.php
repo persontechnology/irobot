@@ -14,6 +14,13 @@ Route::get('/', function () {
 })->name('welcome');
 
 
+
+
+Route::get('/confirmar-nuevo-proyecto', function () {
+    // crear un nuevo ingresra un nuevo proyecto
+    return view('confirmar-nuevo-proyecto');
+})->name('confirmar-nuevo-proyecto');
+
 Route::get('/nuevo-proyecto', function () {
     // crear un nuevo ingresra un nuevo proyecto
     $pry=new Proyecto();
@@ -21,6 +28,8 @@ Route::get('/nuevo-proyecto', function () {
     // retornar a un a pricinpal
     return redirect()->route('principal',$pry->id);
 })->name('nuevo-proyecto');
+
+
 
 // esta es la ruta para el juego pricipal, necesita un id
 Route::get('/principal/{id}',function($id){
