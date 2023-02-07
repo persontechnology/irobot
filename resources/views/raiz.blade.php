@@ -52,7 +52,7 @@
                             <div id="about-left-img2" class="wow fadeInRight animated">
                                 <img src="{{ asset('ui/assets/img/about/2.png') }}" class="img-fluid" alt="about-img">
                                 <div class="video-icon">
-                                    <a href="https://www.youtube.com/embed/Kb8CW3axqRE" class="banner-video video-link"
+                                    <a href="https://www.youtube.com/embed/3sJpZ01yM7o" class="banner-video video-link"
                                         data-width="1200" data-height="1080"><img src="{{ asset('ui/assets/img/banner/play-button.svg') }}" alt="icon"></a>
                                 </div>
                                 <div class="img-overlay"></div>
@@ -277,7 +277,7 @@
                                 <img src="{{ asset('ui/assets/img/team/team_02.jpg') }}" class="img-fluid" alt="team member">
                             </div>
                             <div class="team-members-content text-center">
-                                <a href="teacher-details1.html">
+                                <a href="#!">
                                     <h6>JOSE TOCA</h6>
                                     <p>JEFE DE PROYECTO</p>
                                 </a>
@@ -297,7 +297,7 @@
                                 <img src="{{ asset('ui/assets/img/team/team_01.jpg') }}" class="img-fluid" alt="team member">
                             </div>
                             <div class="team-members-content text-center">
-                                <a href="teacher-details1.html">
+                                <a href="#!">
                                     <h6>TANNIA CAMALLE</h6>
                                     <p>DIRECTORA DE PROYECTO</p>
                                 </a>
@@ -316,7 +316,7 @@
                                 <img src="{{ asset('ui/assets/img/team/team_01.jpg') }}" class="img-fluid" alt="team member">
                             </div>
                             <div class="team-members-content text-center">
-                                <a href="teacher-details1.html">
+                                <a href="#!">
                                     <h6>MAYRA ALBAN</h6>
                                     <p>TUTOR DE PROYECTO</p>
                                 </a>

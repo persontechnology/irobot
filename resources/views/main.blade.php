@@ -158,7 +158,7 @@
                         <div class="col-12 col-sm-6 col-md-6 col-lg-3">
                             <div class="contact-content1">
                                 <div class="contact-content-head">
-                                    <a href="{{ url('/') }}"><img src="{{ asset('ui/assets/img/contact/footer_logo.png') }}" alt="Ankur Logo"></a>
+                                    <a href="{{ url('/') }}"><img src="{{ asset('ui/assets/img/logo/ankur_logo_light.png') }}" alt="Ankur Logo"></a>
                                 </div>
                                 <div class="contact-content1-body">
                                     <p>

@@ -55,7 +55,7 @@
 
 </head>
 
-<body>
+<body class="layout-boxed-bg">
 	<!-- Page content -->
 	<div class="page-content">
 		<!-- Main content -->
