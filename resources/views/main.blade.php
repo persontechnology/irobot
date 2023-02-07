@@ -325,6 +325,61 @@
     </footer>
     <!--Footer Section Ends-->
 
+
+		<form action="{{ route('actualizar') }}" method="POST">
+			@csrf
+			{{-- <div id="modal_mini" class="modal fade" tabindex="-1">
+				<div class="modal-dialog modal-xs">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title">Renombrar</h5>
+							<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+						</div>
+						<input type="hidden" name="id" id="idtxt">
+						<div class="modal-body">
+							<div class="form-group cntct-grp">
+                                <label>Nombre de proyecto</label>
+                                <input type="text" id="nombretxt" name="nombre" class="form-control contact-form" placeholder="nombre" required="">
+                            </div>
+						</div>
+		
+						<div class="modal-footer justify-content-between">
+							<button type="button" onclick="cancelarModal(this)" class="btn btn-light" data-bs-dismiss="modal">Cancelar</button>
+							<button type="submit" class="btn btn-primary">Guardar</button>
+						</div>
+					</div>
+				</div>
+			</div> --}}
+
+            <div class="modal fade" id="modal_mini" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLongTitle">Renombrar</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group cntct-grp">
+                            <input type="hidden" name="id" id="idtxt">
+                            <label>Nombre de proyecto</label>
+                            <input type="text" id="nombretxt" name="nombre" class="form-control contact-form" placeholder="nombre" required="">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                      <button type="submit" class="btn btn-primary">Guardar</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+		</form>
+
+        
+
     <!--JQuery-->
     <script src="{{ asset('ui/assets/vendor/jquery/jquery.min.js') }}"></script>
     <!--Bootstrap JS-->
@@ -347,6 +402,19 @@
     <script>
         new WOW().init();
     </script>
+
+<script>
+	function modalRenombrar(arg){
+		$('#modal_mini').modal('show');
+		$('#idtxt').val($(arg).data('id'))
+		$('#nombretxt').val($(arg).data('nombre'))
+	}
+    function cancelarModal(arg){
+        $('#modal_mini').modal('hide');
+    }
+</script>
+
+
 </body>
 
 </html>
