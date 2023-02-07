@@ -23,7 +23,7 @@ class ProyectoController extends Controller
         // elimnar el proyecto
         $pry->delete();
         // retornamos a la ruta de welcome
-        return redirect()->route('welcome');
+        return redirect()->route('proyectos');
     }
 
 
@@ -33,7 +33,7 @@ class ProyectoController extends Controller
         $pry=Proyecto::findOrFail($request->id);
         $pry->nombre=$request->nombre;
         $pry->save();
-        return redirect()->route('welcome');
+        return redirect()->route('proyectos');
     }
 
 

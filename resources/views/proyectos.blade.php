@@ -1,71 +1,53 @@
-@extends('welcome')
+@extends('main')
 @section('content')
-<div class="container">
-    <div class="row my-2">
-        <div class="col-md-3">
-            <a href="{{ route('nuevo-proyecto') }}" class="me-3">
-                <div class="card card-body">
-                    <div class="d-flex">
-                        <img src="{{ asset('mas.png') }}" class="rounded" width="44" height="44" alt="">
-                        <div class="flex-fill">
-                            <h6 class="mb-0 text-dark mx-2">NUEVO PROYECTO</h6>
-                        </div>
+<section id="banner-aboutPage">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                <!--Banner Content-->
+                <div id="banner-content-aboutPage" class="text-center">
+                    <!--Banner Body Content-->
+                    <div class="banner-body-aboutPage">
+                        <h2>Listado de proyectos</h2>
+                        <h6><a href="{{ url('/') }}">Inicio</a> / Listado de proyectos</h6>
                     </div>
                 </div>
-            </a>
+                <!--Banner Content-->
+            </div>
         </div>
-        @foreach ($proyectos as $pry)
-        <div class="col-md-3">
-            <div class="card card-body">
-                <div class="d-flex">
-                    <a href="#" class="me-3">
-                        <img src="{{ asset('coche.png') }}" class="rounded" width="44" height="44" alt="">
-                    </a>
+    </div>
+</section>
 
-                    <div class="flex-fill">
-                        <h6 class="mb-0">{{ $pry->nombre??'N/A' }}</h6>
-                        <span class="text-muted">{{ $pry->created_at??'' }}</span>
+<section id="blog" class="section-wrapper">
+    <div class="container">
+        <div class="row">
+            <!--Team Member 01-->
+            @foreach ($proyectos as $pry)
+                
+            
+            <div class="col-12 col-sm-6 col-md-3 col-lg-3">
+                <div class="team-members team-member1">
+                    <div class="team-member-overlay">
+                        <ul class="social-list">
+                            <li><a href="{{ route('principal',$pry->id) }}"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
+                            <li><a href="#" onclick="modalRenombrar(this)" data-id="{{ $pry->id }}" data-nombre="{{ $pry->nombre??'N/A' }}"><i class="fa fa-pencil"></i></a></li>
+                            <li><a href="{{ route('eliminar',$pry->id) }}"><i class="fa fa-trash"></i></a></li>
+                        </ul>
+                        <img src="{{ asset('ui/assets/img/classes/nil.jpg') }}" class="img-fluid" alt="team member">
                     </div>
-
-                    <div class="align-self-center ms-3">
-                        <div class="dropdown">
-                            <a href="#" class="text-body" data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="ph-list"></i>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-end" style="">
-                                <a href="{{ route('principal',$pry->id) }}" class="dropdown-item">
-                                    <i class="ph-eye me-2"></i>
-                                    Ver
-                                </a>
-
-                                <a href="#" onclick="modalRenombrar(this)" data-id="{{ $pry->id }}" data-nombre="{{ $pry->nombre??'N/A' }}" class="dropdown-item">
-                                    <i class="ph-pencil-simple me-2"></i>
-                                    Renombrar
-                                </a>
-                                <a href="{{ route('eliminar',$pry->id) }}" class="dropdown-item">
-                                    <i class="ph-trash me-2"></i>
-                                    Eliminar
-                                </a>
-                                {{-- <div class="dropdown-divider"></div>
-                                <a href="#" class="dropdown-item">
-                                    <i class="ph-share-network me-2"></i>
-                                    Compartir
-                                </a> --}}
-                            </div>
-                        </div>
+                    <div class="team-members-content text-center">
+                        <a href="teacher-details1.html">
+                            <h6>{{ $pry->nombre }}</h6>
+                            <p>{{ $pry->created_at }}</p>
+                        </a>
                     </div>
                 </div>
             </div>
-        </div>	
-        @endforeach
-    </div>
-
-    
-        <div class="bg-white">
-            {{ $proyectos->links() }}
+            @endforeach
+            <hr>
+           {{ $proyectos->links() }}
         </div>
-    
-    
+    </div>
+</section>
 
-</div>
 @endsection

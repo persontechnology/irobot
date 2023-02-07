@@ -9,7 +9,7 @@ Route::get('/', function () {
     // una consulta de los proyectos, obtengo los 7 ultimos registros
     $data = array('proyectos' => Proyecto::take(7)->latest()->get() );
     // retornar a la vista con esa consulta
-    return view('inicio',$data);
+    return view('raiz',$data);
 
 })->name('welcome');
 
