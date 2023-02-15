@@ -102,7 +102,7 @@ function hablarVoz(frase){
 
 function procesoEjecutar(accion_v,valor_v,id_btn){
   // hablarVoz(accion_v);
-  
+  $('#'+id_btn).addClass('btn-sm');
   accion=accion_v;
   colorLuz=valor_v;  
 
