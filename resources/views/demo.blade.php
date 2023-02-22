@@ -7,6 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>{{ config('app.name','') }}</title>
 
+    <link href="https://fonts.cdnfonts.com/css/arial" rel="stylesheet">
 	<!-- Font Awesome -->
     <link    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
 	<!-- Global stylesheets -->
@@ -51,6 +52,12 @@
             display: block;
             width: 100%;
         }
+        @import url('https://fonts.cdnfonts.com/css/arial');
+
+        .fondoarial{
+            font-family: 'Arial Light', sans-serif;
+        }
+                
 	</style>
 
 </head>
@@ -323,7 +330,7 @@
             </div>
         </div>
     </div>
-
+<input type="hidden" id="dirlogo" value="{{ asset('ui/assets/img/logo/ankur_logo.png') }}">
 	 
     <script src="{{ asset('js/nivel-uno.js') }}"></script>
   <script>
@@ -377,6 +384,7 @@
             // finalizado el arrastre del boton, se actualiza los niveles uno y tres
             actualizarContenedorUno();
             actualizarContenedorTres();
+            
         });
         
 
@@ -494,7 +502,6 @@
     function cambiarNivel(arg){
         // obtener el id de cada tab
         let nombreTab=$(arg).attr('id');
-		console.log(nombreTab)
         switch (nombreTab) {
             // mostrar nivel uno
             case 'v-tabs-nivel-uno-tab':
@@ -503,6 +510,7 @@
                 // mostrar nivel dos
             case 'v-tabs-nivel-dos-tab':
                 mostrarNivelDos();
+                
             break;
             // mostrar nivel tres
             case 'v-tabs-nivel-tres-tab':
@@ -526,7 +534,12 @@
             if($(e).data('accion')==='pitar'){
                 // separamos la string/ur y obtenemos solo el nombre de la musica
                 var arrmu = $(e).data('valor').split('/');
-                $(e).html('<small class="text-dark">'+nombreObjetoMover+'</small><small class="text-'+$(e).data('color')+'">'+$(e).data('accion')+"("+arrmu[2]+')</small>')
+                if(arrmu[2]){
+                    $(e).html('<small class="text-dark">'+nombreObjetoMover+'</small><small class="text-'+$(e).data('color')+'">'+$(e).data('accion')+"("+arrmu[2]+')</small>')
+                }else{
+                    $(e).html('<small class="text-dark">'+nombreObjetoMover+'</small><small class="text-'+$(e).data('color')+'">'+$(e).data('accion')+"("+arrmu[1]+')</small>')
+                }
+                
             }else{
                 // asiganr nuevos valores a elemtos
                 $(e).html('<small class="text-dark">'+nombreObjetoMover+'</small><small class="text-'+$(e).data('color')+'">'+$(e).data('accion')+"("+$(e).data('valor')+')</small>')
@@ -539,15 +552,22 @@
         $('#nivel-dos-contenedor').html($('#nivel-uno-contenedor').children().clone());
         // realizar un rrecorrido de los elementos
         for(let e of Array.from($("#nivel-dos-contenedor>"))){
+            
             // añadir classe al boton que se ajuste al contenedor
-            $(e).addClass("btn-block")
+            $(e).addClass("btn-block fondoarial")
             let mii=$(e).children('i')[0];
              // si elemento es igual a sonido/musica 
             if($(e).data('accion')==='pitar'){
                 // separamos la string/ur y obtenemos solo el nombre de la musica
                 var arrmu = $(e).data('valor').split('/');
                 
-                $(mii).html('<small class="mx-2">'+$(e).data('accion')+" "+arrmu[2]+'</small>')
+                if(arrmu[2]){
+                    $(mii).html('<small class="mx-2">'+$(e).data('accion')+" "+arrmu[2]+'</small>')
+                }else{
+                    $(mii).html('<small class="mx-2">'+$(e).data('accion')+" "+arrmu[1]+'</small>')
+                }
+               
+                
             }else{
                 // asiganr nuevos valores a elemtos
                 $(mii).html('<small class="mx-2">'+$(e).data('accion')+" "+$(e).data('valor')+'</small>')
@@ -607,16 +627,23 @@
         // reccoreido de elementos
         for(let e of Array.from($("#acciones-tab-dos>"))){
             // añadir clase al elemento boton
+            
             $(e).addClass("m-1")
             let mii=$(e).children('i')[0];
             // si accion es pitar
+            
             if($(e).data('accion')==='pitar'){
                 // añadimos valor solo de la cancion o musica
                 var arrmu = $(e).data('valor').split('/');
-                $(mii).html('<small class="mx-2">'+$(e).data('accion')+" "+arrmu[1]+'</small>')
+                $(mii).html('<small class="mx-2 fondoarial">'+$(e).data('accion')+" "+arrmu[1]+'</small>')
             }else{
+                if($(e).data('accion')==='prenderLuz'){
+                    $(mii).html('<small class="mx-2 fondoarial">'+$(e).data('accion')+'</small>')    
+                }else{
+
                 // añadimos valores del boton
-                $(mii).html('<small class="mx-2">'+$(e).data('accion')+" "+$(e).data('valor')+'</small>')
+                $(mii).html('<small class="mx-2 fondoarial">'+$(e).data('accion')+" "+$(e).data('valor')+'</small>')
+                }
             }
         }
     }
