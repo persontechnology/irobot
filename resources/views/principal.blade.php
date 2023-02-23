@@ -255,7 +255,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger"  onclick="elimnarAccion(this)">Eliminar</button>
-                <button type="button" class="btn btn-primary" onclick="cerrarModal(this)">Cerrar</button>
+                <button type="button" class="btn btn-primary" onclick="cerrarModal(this)">Aceptar</button>
             </div>
             </div>
         </div>

@@ -84,18 +84,29 @@
                                     </a>
 									<small>Bienvenido {{ config('app.name','') }}</small>
 									<div class="ms-sm-auto my-sm-auto">
-										<button type="button" class="btn btn-success btn-sm" onclick="ejecutar(this)" id="btnEjecutar">
-											<i class="ph-play"></i> Ejecutar
+										<button type="button" class="btn btn-success btn-sm" onclick="ejecutar(this)" id="btnEjecutar" data-bs-popup="tooltip" 
+										title="Ejecutar">
+											<i class="ph-play"></i>
 										</button>
-										<button type="button" class="btn btn-danger btn-sm" onclick="cancelar(this)" id="brtnCancelarContinuar">
-											<i class="ph-stop"></i> Cancelar
+										<button type="button" class="btn btn-danger btn-sm" onclick="cancelar(this)" id="brtnCancelarContinuar" data-bs-popup="tooltip" 
+										title="Cancelar">
+											<i class="ph-stop"></i>
 										</button>
-										<button type="button" class="btn btn-dark btn-sm" onclick="guardar(this)" id="brtnCancelarContinuar">
-											<i class="ph-floppy-disk"></i> Guardar {{ $pry->nombre }}
+										<button type="button" class="btn btn-dark btn-sm" onclick="guardar(this)" id="brtnCancelarContinuar" data-bs-popup="tooltip" 
+										title="Guardar">
+											<i class="ph-floppy-disk"></i>
 										</button>
-										<button type="button" class="btn btn-primary btn-sm" onclick="iniciarRecorrido(this)">
+										
+                                        <button type="button" class="btn btn-primary btn-sm" onclick="iniciarRecorrido(this)" data-bs-popup="tooltip" 
+										title="Introducción">
 											<i class="ph-info"></i>
 										</button>
+
+                                        <button type="button" class="btn btn-secondary btn-sm" onclick="apiRest(this)" data-bs-popup="tooltip" 
+										title="Api Rest">
+                                        <i class="ph-broadcast"></i>
+										</button>
+
 
 
 									</div>
@@ -288,7 +299,7 @@
             <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="staticBackdropLabel"></h5>
-                <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+                <button type="button" onclick="cerrarModal(this)" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
 
@@ -325,18 +336,40 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger"  onclick="elimnarAccion(this)">Eliminar</button>
-                <button type="button" class="btn btn-primary" onclick="cerrarModal(this)">Cerrar</button>
+                <button type="button" class="btn btn-primary" onclick="cerrarModal(this)">Aceptar</button>
             </div>
             </div>
         </div>
     </div>
+
+
+    {{-- modal --}} 
+    <div class="modal fade" id="staticBackdropApiRest" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="staticBackdropLabel">Api Rest</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <pre id="codigoApiRest">
+                </pre>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Aceptar</button>
+            </div>
+          </div>
+        </div>
+    </div>
+
+
 <input type="hidden" id="dirlogo" value="{{ asset('ui/assets/img/logo/ankur_logo.png') }}">
 	 
     <script src="{{ asset('js/nivel-uno.js') }}"></script>
   <script>
 
 
-    var nombreObjetoMover="ROBOT."
+    var nombreObjetoMover="iBotsUtc."
 
         // ARRASTRAR OBJETOS DEL NIVEL UNO
         dragula([document.getElementById("acciones-tab-uno"), document.getElementById("nivel-uno-contenedor")], {
@@ -747,6 +780,22 @@
     }
 
 	
+    
+    function apiRest(){
+        $('#staticBackdropApiRest').modal('show');
+         var url="{{ url('/') }}"+"/api/";
+        for(let e of Array.from($("#nivel-uno-contenedor>"))){
+
+            var mistring=$(e).data('accion')+"-"+$(e).data('valor')+"/";
+            var res = mistring.replace(/\s+/g, "");
+            url+=res;
+
+        }
+
+        $('#codigoApiRest').html(url);
+
+    }
+
   </script>
 	
 </body>

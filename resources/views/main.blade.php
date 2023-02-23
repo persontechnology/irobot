@@ -56,10 +56,9 @@
                             <ul class="social-custom list-inline">
                                 <li class="list-inline-item clock text-muted">{{ '@'.config('app.name','') }}
                                 </li>
-                                <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li class="list-inline-item"><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                <li class="list-inline-item"><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                <li class="list-inline-item"><a href="https://www.facebook.com/universidadtecnicadecotopaxi/" target="_blank" ><i class="fa fa-facebook"></i></a></li>
+                                <li class="list-inline-item"><a href="https://twitter.com/utcCotopaxi?t=r1lIg28V5Zbyf6CyuFbxOA&s=08" target="_blank" ><i class="fa fa-twitter"></i></a></li>
+                                <li class="list-inline-item"><a href="https://www.instagram.com/utc_cotopaxi/?igshid=YmMyMTA2M2Y%3D" target="_blank" ><i class="fa fa-instagram"></i></a></li>
                             </ul>
                         </div>
                     </div>
@@ -150,7 +149,7 @@
 
     <!--Footer Section-->
     <footer id="footer-top">
-        <div class="section-wrapper">
+        <div class="section-wrapper bg-danger">
             <div class="container">
                 <div id="contact-content">
                     <div class="row">
@@ -283,9 +282,10 @@
                                 </div>
                                 <div class="contact-content4-foot">
                                     <ul>
-                                        <li><a href="#!"><i class="fa fa-facebook"></i></a></li>
-                                        <li><a href="#!"><i class="fa fa-twitter"></i></a></li>
-                                        <li><a href="#!"><i class="fa fa-linkedin"></i></a></li>
+                                        <li><a href="https://www.facebook.com/universidadtecnicadecotopaxi/"><i class="fa fa-facebook"></i></a></li>
+                                        <li><a href="https://twitter.com/utcCotopaxi?t=r1lIg28V5Zbyf6CyuFbxOA&s=08"><i class="fa fa-twitter"></i></a></li>
+                                        <li><a href="https://www.instagram.com/utc_cotopaxi/?igshid=YmMyMTA2M2Y%3D"><i class="fa fa-instagram"></i></a></li>
+
                                     </ul>
                                 </div>
                             </div>
