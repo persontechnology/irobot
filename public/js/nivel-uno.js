@@ -5,7 +5,7 @@ let velocidad=0;
 let accion='';
 let estado=false;
 let colorLuz="#0f0";
-let tiempo=5000;
+let tiempo=1000;
 let tiempoEjecucion;
 
 
