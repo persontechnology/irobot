@@ -497,7 +497,7 @@
         }
 
         // asignar titulo de la modal con el nombre de la accion
-        $('#staticBackdropLabel').html(accion);
+        $('#staticBackdropLabel').html(accion.toUpperCase());
         // mostrar la modal
         $('#staticBackdrop').modal('show');
         // asiganr al input de la modal un id
