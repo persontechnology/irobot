@@ -304,7 +304,7 @@
             <div class="modal-body">
 
                 <div id="contenedorDireccion">
-                    <label class="form-label" for="rangoValor">Valor</label>
+                    <label class="form-label" for="rangoValor">Valor de movimiento</label>
                     <div class="range">
                         <input type="range" onchange="cambiarValor(this)" class="form-range" min="1" max="10" step="1" value="1" id="rangoValor" />
                     </div>
@@ -443,9 +443,9 @@
             // si opcion es pitar, optener el valor de pitar: solo el nombre de la cancion, caso contrario es el mismo valor
             if($(el).data('accion')==='pitar'){
                 var arrmu = $(el).data('valor').split('/');
-                $(el).html('<small class="text-dark">'+nombreObjetoMover+'</small><small class="text-'+$(el).data('color')+'">'+$(el).data('accion')+"("+arrmu[1]+')</small>')
+                $(el).html('<small class="text-dark">'+nombreObjetoMover+'</small><small class="text-'+$(el).data('color')+'">'+$(el).data('accion').toUpperCase()+"("+arrmu[1]+')</small>')
             }else{
-                $(el).html('<small class="text-dark">'+nombreObjetoMover+'</small><small class="text-'+$(el).data('color')+'">'+$(el).data('accion')+"("+$(el).data('valor')+')</small>')
+                $(el).html('<small class="text-dark">'+nombreObjetoMover+'</small><small class="text-'+$(el).data('color')+'">'+$(el).data('accion').toUpperCase()+"("+$(el).data('valor')+')</small>')
             }
             
 
@@ -568,14 +568,14 @@
                 // separamos la string/ur y obtenemos solo el nombre de la musica
                 var arrmu = $(e).data('valor').split('/');
                 if(arrmu[2]){
-                    $(e).html('<small class="text-dark">'+nombreObjetoMover+'</small><small class="text-'+$(e).data('color')+'">'+$(e).data('accion')+"("+arrmu[2]+')</small>')
+                    $(e).html('<small class="text-dark">'+nombreObjetoMover+'</small><small class="text-'+$(e).data('color')+'">'+$(e).data('accion').toUpperCase()+"("+arrmu[2]+')</small>')
                 }else{
-                    $(e).html('<small class="text-dark">'+nombreObjetoMover+'</small><small class="text-'+$(e).data('color')+'">'+$(e).data('accion')+"("+arrmu[1]+')</small>')
+                    $(e).html('<small class="text-dark">'+nombreObjetoMover+'</small><small class="text-'+$(e).data('color')+'">'+$(e).data('accion').toUpperCase()+"("+arrmu[1]+')</small>')
                 }
                 
             }else{
                 // asiganr nuevos valores a elemtos
-                $(e).html('<small class="text-dark">'+nombreObjetoMover+'</small><small class="text-'+$(e).data('color')+'">'+$(e).data('accion')+"("+$(e).data('valor')+')</small>')
+                $(e).html('<small class="text-dark">'+nombreObjetoMover+'</small><small class="text-'+$(e).data('color')+'">'+$(e).data('accion').toUpperCase()+"("+$(e).data('valor')+')</small>')
             }
         }
     }
@@ -595,9 +595,9 @@
                 var arrmu = $(e).data('valor').split('/');
                 
                 if(arrmu[2]){
-                    $(mii).html('<small class="mx-2">'+$(e).data('accion')+" "+arrmu[2]+'</small>')
+                    $(mii).html('<small class="mx-2">'+$(e).data('accion')+" "+arrmu[2].toUpperCase()+'</small>')
                 }else{
-                    $(mii).html('<small class="mx-2">'+$(e).data('accion')+" "+arrmu[1]+'</small>')
+                    $(mii).html('<small class="mx-2">'+$(e).data('accion')+" "+arrmu[1].toUpperCase()+'</small>')
                 }
                
                 
@@ -668,14 +668,14 @@
             if($(e).data('accion')==='pitar'){
                 // añadimos valor solo de la cancion o musica
                 var arrmu = $(e).data('valor').split('/');
-                $(mii).html('<small class="mx-2 fondoarial">'+$(e).data('accion')+" "+arrmu[1]+'</small>')
+                $(mii).html('<small class="mx-2 fondoarial">'+$(e).data('accion').toUpperCase()+" "+arrmu[1]+'</small>')
             }else{
                 if($(e).data('accion')==='prenderLuz'){
-                    $(mii).html('<small class="mx-2 fondoarial">'+$(e).data('accion')+'</small>')    
+                    $(mii).html('<small class="mx-2 fondoarial">'+$(e).data('accion').toUpperCase()+'</small>')    
                 }else{
 
                 // añadimos valores del boton
-                $(mii).html('<small class="mx-2 fondoarial">'+$(e).data('accion')+" "+$(e).data('valor')+'</small>')
+                $(mii).html('<small class="mx-2 fondoarial">'+$(e).data('accion').toUpperCase()+" "+$(e).data('valor')+'</small>')
                 }
             }
         }
@@ -693,10 +693,10 @@
             if($(e).data('accion')==='pitar'){
                 // añadimos valor solo de la cancion o musica
                 var arrmu = $(e).data('valor').split('/');
-                $(e).html('<i class="fa-solid fa-left-long fa-2x" style="display:none;"></i>'+$(e).data('accion')+'<span class="badge bg-'+$(e).data('color')+' ms-2">'+arrmu[1]+'</span>')
+                $(e).html('<i class="fa-solid fa-left-long fa-2x" style="display:none;"></i>'+$(e).data('accion').toUpperCase()+'<span class="badge bg-'+$(e).data('color')+' ms-2">'+arrmu[1]+'</span>')
             }else{
                 // añadimos valores del boton
-                $(e).html('<i class="fa-solid fa-left-long fa-2x" style="display:none;"></i>'+$(e).data('accion')+'<span class="badge bg-'+$(e).data('color')+' ms-2">'+$(e).data('valor')+'</span>')
+                $(e).html('<i class="fa-solid fa-left-long fa-2x" style="display:none;"></i>'+$(e).data('accion').toUpperCase()+'<span class="badge bg-'+$(e).data('color')+' ms-2">'+$(e).data('valor')+'</span>')
             }
         }
     }
@@ -788,7 +788,7 @@
 
             var mistring=$(e).data('accion')+"-"+$(e).data('valor')+"/";
             var res = mistring.replace(/\s+/g, "");
-            url+=res;
+            url+=res.toUpperCase();
 
         }
 
