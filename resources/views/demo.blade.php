@@ -786,9 +786,9 @@
          var url="{{ url('/') }}"+"/api/";
         for(let e of Array.from($("#nivel-uno-contenedor>"))){
 
-            var mistring=$(e).data('accion')+"-"+$(e).data('valor')+"/";
+            var mistring=$(e).data('accion').toUpperCase()+"-"+$(e).data('valor')+"/";
             var res = mistring.replace(/\s+/g, "");
-            url+=res.toUpperCase();
+            url+=res;
 
         }
 
