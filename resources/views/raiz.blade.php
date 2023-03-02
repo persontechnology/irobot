@@ -14,7 +14,7 @@
                             <h1>Presentamos {{ config('app.name','') }} <span>para codificar, descubrir y jugar.</span></h1>
                             <!--Banner Button-->
                             <div id="banner-btn">
-                                <a class="btn btn-general btn-banner smooth-scroll btn-lg" href="#about" title="Read More" role="button">NUEVO PROYECTO</a>
+                                <a class="btn btn-general btn-banner smooth-scroll btn-lg" href="#!" title="Read More" role="button" data-toggle="modal" data-target="#exampleModalVideo">MIRA NUESTRO VIDEO</a>
                             </div>
                         </div>
                         <!--Banner Content-->
@@ -52,8 +52,11 @@
                             <div id="about-left-img2" class="wow fadeInRight animated">
                                 <img src="{{ asset('ui/assets/img/about/2.png') }}" class="img-fluid" alt="about-img">
                                 <div class="video-icon">
-                                    <a href="https://www.youtube.com/embed/3sJpZ01yM7o" class="banner-video video-link"
+                                    <a href="https://www.youtube.com/embed/-2-cXyCsC2Q" class="banner-video video-link"
                                         data-width="1200" data-height="1080"><img src="{{ asset('ui/assets/img/banner/play-button.svg') }}" alt="icon"></a>
+
+
+                                        
                                 </div>
                                 <div class="img-overlay"></div>
                             </div>
@@ -85,7 +88,7 @@
                         </div>
     
                         <div id="about-btn">
-                            <a class="btn btn-general btn-about smooth-scroll" href="about.html" title="Discover More"
+                            <a class="btn btn-info" href="{{ route('proyectos') }}" title="Discover More"
                                 role="button">Ver todos los proyectos</a>
                         </div>
                     </div>
@@ -385,4 +388,38 @@
             <!--Stats BG Image Ends-->
         </section>
         <!--Blog Section Ends-->
+
+        
+        
+
+
+        <div class="modal fade" id="exampleModalVideo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  
+
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/-2-cXyCsC2Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                      </div>
+
+
+                      
+
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
 @endsection
