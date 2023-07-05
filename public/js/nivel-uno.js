@@ -81,6 +81,7 @@ function ejecutar() {
 
 function fnFinalizar(accion_v,tiempoEjecucion_v,id_btn){
   // hablarVoz(accion_v);
+  $('#'+id_btn).addClass('btn-sm btn-dark');
   estado=false;
   clearTimeout(tiempoEjecucion_v)
   
@@ -102,7 +103,7 @@ function hablarVoz(frase){
 
 function procesoEjecutar(accion_v,valor_v,id_btn){
   // hablarVoz(accion_v);
-  $('#'+id_btn).addClass('btn-sm');
+  $('#'+id_btn).addClass('btn-sm btn-dark');
   accion=accion_v;
   colorLuz=valor_v;  
 

@@ -84,25 +84,25 @@
                                     </a>
 									<small>Bienvenido {{ config('app.name','') }}</small>
 									<div class="ms-sm-auto my-sm-auto">
-										<button type="button" class="btn btn-success btn-sm" onclick="ejecutar(this)" id="btnEjecutar" data-bs-popup="tooltip" 
+										<button type="button" class="btn btn-success btn-sm" onclick="ejecutar(this)" id="btnEjecutar" data-bs-placement="bottom" data-bs-popup="tooltip" 
 										title="Ejecutar">
 											<i class="ph-play"></i>
 										</button>
-										<button type="button" class="btn btn-danger btn-sm" onclick="cancelar(this)" id="brtnCancelarContinuar" data-bs-popup="tooltip" 
+										<button type="button" class="btn btn-danger btn-sm" onclick="cancelar(this)" id="brtnCancelarContinuar" data-bs-placement="bottom" data-bs-popup="tooltip" 
 										title="Cancelar">
 											<i class="ph-stop"></i>
 										</button>
-										<button type="button" class="btn btn-dark btn-sm" onclick="guardar(this)" id="brtnCancelarContinuar" data-bs-popup="tooltip" 
+										<button type="button" class="btn btn-dark btn-sm" onclick="guardar(this)" id="brtnCancelarContinuar" data-bs-placement="bottom" data-bs-popup="tooltip" 
 										title="Guardar">
 											<i class="ph-floppy-disk"></i>
 										</button>
 										
-                                        <button type="button" class="btn btn-primary btn-sm" onclick="iniciarRecorrido(this)" data-bs-popup="tooltip" 
+                                        <button type="button" class="btn btn-primary btn-sm" onclick="iniciarRecorrido(this)" data-bs-placement="bottom" data-bs-popup="tooltip" 
 										title="Introducción">
 											<i class="ph-info"></i>
 										</button>
 
-                                        <button type="button" class="btn btn-secondary btn-sm" onclick="apiRest(this)" data-bs-popup="tooltip" 
+                                        <button type="button" class="btn btn-secondary btn-sm" onclick="apiRest(this)" data-bs-placement="bottom" data-bs-popup="tooltip" 
 										title="Api Rest">
                                         <i class="ph-broadcast"></i>
 										</button>
@@ -304,7 +304,7 @@
             <div class="modal-body">
 
                 <div id="contenedorDireccion">
-                    <label class="form-label" for="rangoValor">Valor de movimiento</label>
+                    <label class="form-label" for="rangoValor">Velocidad <strong id="valor_movimiento_txt">1</strong></label>
                     <div class="range">
                         <input type="range" onchange="cambiarValor(this)" class="form-range" min="1" max="10" step="1" value="1" id="rangoValor" />
                     </div>
@@ -510,6 +510,7 @@
     function cambiarValor(arg){
         // obtenemos el id del input de la modal
         let btnid=$('#idBoton').val();
+        $('#valor_movimiento_txt').html($(arg).val())
         // al boton selecionado actualizamos el valor seleccionado
         $("#"+btnid).data('valor',parseFloat($(arg).val())).attr('data-valor',parseFloat($(arg).val()));
     }
@@ -766,11 +767,17 @@
 
     // guardar proyecto
     function guardar(){
+        
+        const elements = document.querySelectorAll('#nivel-uno-contenedor >button');
+        elements.forEach((element) => {
+            $(element).removeClass('btn-sm btn-dark')
+        });
         var h=$("#nivel-uno-contenedor").html();
        $('#contenidoHtml').val(h);
        $('#formGuardar').submit();
     }
 
+    
     // elimnar elemento accion
     function elimnarAccion(){
         $('#staticBackdrop').modal('hide');
